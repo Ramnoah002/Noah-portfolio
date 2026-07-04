@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Focus Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing:border-box;
+        font-family: Arial,sans-serif;
+      }
+      body{
+        background-color: #121212;
+        color: white;
+        padding: 25px;
+      }
+      header{
+        text-align: center;
+        margin-bottom: 33px;
+      }
+      header h1{
+        color: #00c853;
+        margin-bottom: 11px;
+      }
+      header p{
+        margin: 5px 0;
+      }
+      .card{
+        background: #1e1e1e;
+        padding: 20px;
+        border-radius: 12px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px rgba(0,0,0,0.3);
+      }
+      .card h2{
+        margin-bottom: 15px;
+        color: #00e676;
+      }
+      input{
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 12px;
+        border: none;
+        border-radius: 8px;
+        font-size: 15px;
+      }
+      button{
+        background: #00e676;
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      button:hover{
+        background-color: #00e6;
+      }
+      ul{
+        list-style: none;
+        margin-top: 15px;
+      }
+      ul li{
+        background: #333;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 8px;
+      }
+      #quote{
+        font-style: italic;
+        color: #ccc;
+      }
+      @media(max-width:768px){
+        body{padding: 15px;
+        }
+        header h1{
+          font-size: 28px;
+        }
+        .card{
+          padding: 15px;
+        }
+        button{
+          width: 100%;
+        }
+      }
+    </style>
+    <script></script>
+</head>
+<body>
+    <!--Header-->
+    <header>
+        <h1>Daily Focus Dashboard</h1>
+        <p id="greetings">Good Evening</p>
+
+        <h2 id="clock">00:00:00</h2>
+        <p id="date">Today's date</p>
+
+    </header>
+      <!---Main goaL-->
+      <section class="card">
+        <h2>Main Goal</h2>
+        <input type="text" id="goal" placeholder="Enter main goal">
+
+        <button id="save goal">Save Goal</button>
+      </section>
+      <!--Todo list-->
+      <section class="card">
+        <h2>Todays Task</h2>
+        <input type="text" id="taskInput" placeholder="Add a Task">
+        
+        <button id="addtask">Add Task</button>
+
+        <ul id="taskList"></ul>
+      </section>
+
+      <!--Water Tracker-->
+      <section class="card">
+        <h2>Water Tracker</h2>
+
+        <p id="watercount">0 / 8 Glasses</p>
+        <button id="drinkwater">+1 Glass</button>
+      </section>
+      <!---Work out-->
+      <section class="card">
+
+        <h2>Work Out</h2>
+        <button id="workoutbtn">
+            Mark Work Out Complete
+        </button>
+      </section>
+         <!---QUOTE-->
+
+         <section class="card">
+        <h2>Quote of the day</h2>
+
+          <p id="quote">
+       Success comes from consistency, not perfection.
+          </p>
+         </section>
+</body>
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ram Noah | Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+        *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background: #111;
+    color: white;
+    line-height:1.6;
+}
+
+/* Navigation */
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 10%;
+    background:#000;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+    color:cyan;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:25px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:cyan;
+}
+
+/* Hero */
+
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    min-height:100vh;
+    padding:0 10%;
+}
+
+.hero-text{
+    flex:1;
+}
+
+.hero-text h1{
+    font-size:60px;
+    margin-bottom:15px;
+}
+
+.hero-text h2{
+    color:cyan;
+    margin-bottom:20px;
+}
+
+.hero-text p{
+    max-width:500px;
+    margin-bottom:30px;
+}
+
+.hero-image{
+    flex:1;
+    text-align:center;
+}
+
+.hero-image img{
+    width:350px;
+    height:350px;
+    object-fit:cover;
+    border-radius:50%;
+    border:5px solid cyan;
+}
+
+/* Button */
+
+.btn{
+    display:inline-block;
+    background:cyan;
+    color:black;
+    padding:12px 28px;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:red;
+    transform:translateY(-3px);
+}
+
+/* Sections */
+
+section{
+    padding:80px 10%;
+}
+
+section h2{
+    text-align:center;
+    color:cyan;
+    margin-bottom:40px;
+}
+
+/* Cards */
+
+.cards{
+    display:flex;
+    flex:column;
+    margin-top: auto;
+    gap:25px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.card{
+    background:#222;
+    padding: 25px;
+    border-radius:12px;
+    width:300px;
+    text-align:center;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    width:100%;
+    border-radius:10px;
+    margin-bottom:15px;
+    object-fit: cover;
+    
+}
+
+/* Footer */
+
+footer{
+    background:#000;
+    text-align:center;
+    padding:20px;
+    margin-top:50px;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+nav{
+    flex-direction:column;
+}
+
+nav ul{
+    flex-direction:column;
+    text-align:center;
+}
+
+nav ul li{
+    margin:10px 0;
+}
+
+.hero{
+    flex-direction:column;
+    text-align:center;
+    padding-top:50px;
+}
+
+.hero-text h1{
+    font-size:40px;
+}
+
+.hero-image img{
+    width:250px;
+    height:250px;
+    margin-top:30px;
+}
+
+}
+.card img{ height:180px; object-fit:cover; }
+.card .btn{ margin-top:auto; }
+.card p{
+    flex-grow:1;
+    min-height:48px;
+}
+    </style>
+    <script>
+        // Welcome message
+console.log("Welcome to Ram Noah's Portfolio!");
+
+// Button click effect
+const buttons = document.querySelectorAll(".btn");
+
+buttons.forEach(button => {
+    button.addEventListener("click", function () {
+        console.log("Button clicked!");
+    });
+});
+
+// Reveal sections when scrolling
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+
+    sections.forEach(section => {
+
+        const top = section.getBoundingClientRect().top;
+
+        if (top < window.innerHeight - 100) {
+            section.style.opacity = "1";
+            section.style.transform = "translateY(0)";
+        }
+
+    });
+
+});
+    </script>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+
+        <div class="logo">
+            Ram Noah
+        </div>
+
+        <ul>
+
+            <li><a href="#home">Home</a></li>
+
+            <li><a href="#about">About</a></li>
+
+            <li><a href="#skills">Skills</a></li>
+
+            <li><a href="#projects">Projects</a></li>
+
+            <li><a href="#contact">Contact</a></li>
+
+        </ul>
+
+    </nav>
+
+    <!-- Hero -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-text">
+
+            <h1>Hello, I'm <span>Ram Noah</span></h1>
+
+            <h2>Frontend Web Developer</h2>
+
+            <p>
+                I build modern, responsive and beautiful websites
+                using HTML, CSS and JavaScript.
+            </p>
+
+            <a href="#projects" class="btn">
+                View My Projects
+            </a>
+
+        </div>
+
+        <div class="hero-image">
+
+            <img src="images/image 1.jpg" alt="Ram Noah">
+
+        </div>
+
+    </section>
+
+    <!-- About -->
+
+    <section id="about">
+
+        <h2>About Me</h2>
+
+        <p>
+            I'm a passionate web developer learning every day.
+            My goal is to build websites that solve real-world
+            business problems.
+        </p>
+        <p>I like turning messy problems into simple solutions.</p>
+
+    </section>
+
+    <!-- Skills -->
+
+    <section id="skills">
+
+        <h2>My Skills</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>HTML</h3>
+            </div>
+
+            <div class="card">
+                <h3>CSS</h3>
+            </div>
+
+            <div class="card">
+                <h3>JavaScript</h3>
+            </div>
+
+            <div class="card">
+                <h3>Git & GitHub</h3>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Projects -->
+
+    <section id="projects">
+
+        <h2>Projects</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <img src="images/hero.jpg" alt="Apparel">
+
+                <h3>Lavine's Apparel</h3>
+        
+
+                <p>Business website for an apparel shop.</p>
+
+               <a href="https://ramnoah002.github.io/Lavines-appeal/" class="btn"
+                target="_blank">View Live</a>
+            </div>
+
+            <div class="card">
+            <img src="images/barber.jfif" alt="barbershop">
+                <h3>Elite Barbershop</h3>
+
+                <p>Modern barbershop landing page.</p>
+            <a href="#" class="btn">Coming Soon</a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Contact -->
+
+    <section id="contact">
+
+        <h2>Contact Me</h2>
+
+        <p>Email: Ramnoah002@gmail.com</p>
+
+        <p>WhatsApp: +254 708 401 452</p>
+
+        <a href="mailto:Ramnoah002@gmail.com?subject=Let's%20Work%20Together" class="btn">
+    Hire Me
+</a>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            © 2026 Ram Noah | All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+</html>
