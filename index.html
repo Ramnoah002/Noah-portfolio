@@ -3,399 +3,510 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ram Noah | Portfolio</title>
+
+    <title>Ram Noah | Frontend Web Developer</title>
+
+    <meta
+        name="description"
+        content="Ram Noah is a frontend web developer building modern and responsive websites for businesses."
+    >
 
     <link rel="stylesheet" href="style.css">
-    <style>
-        *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
-    scroll-behavior:smooth;
-}
-
-body{
-    background: #111;
-    color: white;
-    line-height:1.6;
-}
-
-/* Navigation */
-
-nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 10%;
-    background:#000;
-    position:sticky;
-    top:0;
-    z-index:1000;
-}
-
-.logo{
-    font-size:28px;
-    font-weight:bold;
-    color:cyan;
-}
-
-nav ul{
-    display:flex;
-    list-style:none;
-}
-
-nav ul li{
-    margin-left:25px;
-}
-
-nav ul li a{
-    color:white;
-    text-decoration:none;
-    transition:.3s;
-}
-
-nav ul li a:hover{
-    color:cyan;
-}
-
-/* Hero */
-
-.hero{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    min-height:100vh;
-    padding:0 10%;
-}
-
-.hero-text{
-    flex:1;
-}
-
-.hero-text h1{
-    font-size:60px;
-    margin-bottom:15px;
-}
-
-.hero-text h2{
-    color:cyan;
-    margin-bottom:20px;
-}
-
-.hero-text p{
-    max-width:500px;
-    margin-bottom:30px;
-}
-
-.hero-image{
-    flex:1;
-    text-align:center;
-}
-
-.hero-image img{
-    width:350px;
-    height:350px;
-    object-fit:cover;
-    border-radius:50%;
-    border:5px solid cyan;
-}
-
-/* Button */
-
-.btn{
-    display:inline-block;
-    background:cyan;
-    color:black;
-    padding:12px 28px;
-    text-decoration:none;
-    border-radius:8px;
-    font-weight:bold;
-    transition:.3s;
-}
-
-.btn:hover{
-    background:red;
-    transform:translateY(-3px);
-}
-
-/* Sections */
-
-section{
-    padding:80px 10%;
-}
-
-section h2{
-    text-align:center;
-    color:cyan;
-    margin-bottom:40px;
-}
-
-/* Cards */
-
-.cards{
-    display:flex;
-    flex:column;
-    margin-top: auto;
-    gap:25px;
-    flex-wrap:wrap;
-    justify-content:center;
-}
-
-.card{
-    background:#222;
-    padding: 25px;
-    border-radius:12px;
-    width:300px;
-    text-align:center;
-    transition:.3s;
-}
-
-.card:hover{
-    transform:translateY(-10px);
-}
-
-.card img{
-    width:100%;
-    border-radius:10px;
-    margin-bottom:15px;
-    object-fit: cover;
-    
-}
-
-/* Footer */
-
-footer{
-    background:#000;
-    text-align:center;
-    padding:20px;
-    margin-top:50px;
-}
-
-/* Responsive */
-
-@media(max-width:768px){
-
-nav{
-    flex-direction:column;
-}
-
-nav ul{
-    flex-direction:column;
-    text-align:center;
-}
-
-nav ul li{
-    margin:10px 0;
-}
-
-.hero{
-    flex-direction:column;
-    text-align:center;
-    padding-top:50px;
-}
-
-.hero-text h1{
-    font-size:40px;
-}
-
-.hero-image img{
-    width:250px;
-    height:250px;
-    margin-top:30px;
-}
-
-}
-.card img{ height:180px; object-fit:cover; }
-.card .btn{ margin-top:auto; }
-.card p{
-    flex-grow:1;
-    min-height:48px;
-}
-    </style>
-    <script>
-        // Welcome message
-console.log("Welcome to Ram Noah's Portfolio!");
-
-// Button click effect
-const buttons = document.querySelectorAll(".btn");
-
-buttons.forEach(button => {
-    button.addEventListener("click", function () {
-        console.log("Button clicked!");
-    });
-});
-
-// Reveal sections when scrolling
-const sections = document.querySelectorAll("section");
-
-window.addEventListener("scroll", () => {
-
-    sections.forEach(section => {
-
-        const top = section.getBoundingClientRect().top;
-
-        if (top < window.innerHeight - 100) {
-            section.style.opacity = "1";
-            section.style.transform = "translateY(0)";
-        }
-
-    });
-
-});
-    </script>
+    <script src="script.js" defer></script>
 </head>
+
 <body>
 
-    <!-- Navigation -->
-    <nav>
+    <!-- ================= NAVIGATION ================= -->
 
-        <div class="logo">
-            Ram Noah
-        </div>
+    <header class="header">
 
-        <ul>
+        <nav class="navbar">
 
-            <li><a href="#home">Home</a></li>
-
-            <li><a href="#about">About</a></li>
-
-            <li><a href="#skills">Skills</a></li>
-
-            <li><a href="#projects">Projects</a></li>
-
-            <li><a href="#contact">Contact</a></li>
-
-        </ul>
-
-    </nav>
-
-    <!-- Hero -->
-
-    <section class="hero" id="home">
-
-        <div class="hero-text">
-
-            <h1>Hello, I'm <span>Ram Noah</span></h1>
-
-            <h2>Frontend Web Developer</h2>
-
-            <p>
-                I build modern, responsive and beautiful websites
-                using HTML, CSS and JavaScript.
-            </p>
-
-            <a href="#projects" class="btn">
-                View My Projects
+            <a href="#home" class="logo">
+                Noah<span>.</span>
             </a>
 
-        </div>
+            <!-- Mobile Menu Button -->
+            <button class="menu-btn" aria-label="Open menu">
+                ☰
+            </button>
 
-        <div class="hero-image">
+            <ul class="nav-links">
 
-            <img src="images/image 1.jpg" alt="Ram Noah">
+                <li>
+                    <a href="#home">Home</a>
+                </li>
 
-        </div>
+                <li>
+                    <a href="#about">About</a>
+                </li>
 
-    </section>
+                <li>
+                    <a href="#services">Services</a>
+                </li>
 
-    <!-- About -->
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
 
-    <section id="about">
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
 
-        <h2>About Me</h2>
+            </ul>
 
-        <p>
-            I'm a passionate web developer learning every day.
-            My goal is to build websites that solve real-world
-            business problems.
-        </p>
-        <p>I like turning messy problems into simple solutions.</p>
+            <a href="#contact" class="nav-btn">
+                Let's Talk
+            </a>
 
-    </section>
+        </nav>
 
-    <!-- Skills -->
+    </header>
 
-    <section id="skills">
 
-        <h2>My Skills</h2>
+    <!-- ================= HERO ================= -->
 
-        <div class="cards">
+    <main>
 
-            <div class="card">
-                <h3>HTML</h3>
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <p class="hero-small">
+                    HELLO, I'M
+                </p>
+
+                <h1>
+                    Ram <span>Noah</span>
+                </h1>
+
+                <h2>
+                    Frontend Web Developer
+                </h2>
+
+                <p class="hero-description">
+                    I build modern, responsive and user-friendly websites
+                    that help businesses build their online presence.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#projects" class="btn">
+                        View My Work
+                    </a>
+
+                    <a href="#contact" class="btn btn-outline">
+                        Let's Work Together
+                    </a>
+
+                </div>
+
             </div>
 
-            <div class="card">
-                <h3>CSS</h3>
+
+            <div class="hero-image">
+
+                <div class="image-circle">
+
+                    <img
+                        src="images/image 1.jpg"
+                        alt="Ram Noah"
+                    >
+
+                </div>
+
             </div>
 
-            <div class="card">
-                <h3>JavaScript</h3>
+        </section>
+
+
+        <!-- ================= ABOUT ================= -->
+
+        <section class="section about" id="about">
+
+            <div class="section-heading">
+
+                <p>ABOUT ME</p>
+
+                <h2>
+                    I build websites with purpose.
+                </h2>
+
             </div>
 
-            <div class="card">
-                <h3>Git & GitHub</h3>
+            <div class="about-content">
+
+                <div>
+
+                    <p>
+                        I'm Ram Noah, a frontend web developer
+                        learning and building real-world projects
+                        using HTML, CSS and JavaScript.
+                    </p>
+
+                    <p>
+                        My goal is to create websites that don't just
+                        look good, but also help businesses connect
+                        with their customers.
+                    </p>
+
+                </div>
+
+                <div class="about-box">
+
+                    <h3>My Goal</h3>
+
+                    <p>
+                        To become a professional developer and build
+                        useful technology that solves real problems.
+                    </p>
+
+                </div>
+
             </div>
 
-        </div>
+        </section>
 
-    </section>
 
-    <!-- Projects -->
+        <!-- ================= SERVICES ================= -->
 
-    <section id="projects">
+        <section class="section" id="services">
 
-        <h2>Projects</h2>
+            <div class="section-heading">
 
-        <div class="cards">
+                <p>WHAT I DO</p>
 
-            <div class="card">
-                <img src="images/hero.jpg" alt="Apparel">
+                <h2>My Services</h2>
 
-                <h3>Lavine's Apparel</h3>
-        
-
-                <p>Business website for an apparel shop.</p>
-
-               <a href="https://ramnoah002.github.io/Lavines-appeal/" class="btn"
-                target="_blank">View Live</a>
             </div>
 
-            <div class="card">
-            <img src="images/barber.jfif" alt="barbershop">
-                <h3>Elite Barbershop</h3>
+            <div class="cards">
 
-                <p>Modern barbershop landing page.</p>
-            <a href="#" class="btn">Coming Soon</a>
+                <div class="card">
+
+                    <div class="card-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Business Websites
+                    </h3>
+
+                    <p>
+                        Modern websites for shops, businesses
+                        and organizations.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Portfolio Websites
+                    </h3>
+
+                    <p>
+                        Professional websites that showcase
+                        your work and skills.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Responsive Design
+                    </h3>
+
+                    <p>
+                        Websites that work properly on phones,
+                        tablets and computers.
+                    </p>
+
+                </div>
+
             </div>
 
-        </div>
+        </section>
 
-    </section>
 
-    <!-- Contact -->
+        <!-- ================= SKILLS ================= -->
 
-    <section id="contact">
+        <section class="section skills" id="skills">
 
-        <h2>Contact Me</h2>
+            <div class="section-heading">
 
-        <p>Email: Ramnoah002@gmail.com</p>
+                <p>MY SKILLS</p>
 
-        <p>WhatsApp: +254 708 401 452</p>
+                <h2>Technologies I Use</h2>
 
-        <a href="mailto:Ramnoah002@gmail.com?subject=Let's%20Work%20Together" class="btn">
-    Hire Me
-</a>
+            </div>
 
-    </section>
+            <div class="skills-list">
 
-    <!-- Footer -->
+                <div class="skill">
+                    HTML5
+                </div>
+
+                <div class="skill">
+                    CSS3
+                </div>
+
+                <div class="skill">
+                    JavaScript
+                </div>
+
+                <div class="skill">
+                    Git
+                </div>
+
+                <div class="skill">
+                    GitHub
+                </div>
+
+                <div class="skill">
+                    Firebase
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PROJECTS ================= -->
+
+        <section class="section" id="projects">
+
+            <div class="section-heading">
+
+                <p>MY WORK</p>
+
+                <h2>Featured Projects</h2>
+
+            </div>
+
+            <div class="project-grid">
+
+
+                <!-- Project 1 -->
+
+                <article class="project-card">
+
+                    <div class="project-image">
+
+                        <img
+                            src="images/hero.jpg"
+                            alt="Lavine's Apparel website"
+                        >
+
+                    </div>
+
+                    <div class="project-info">
+
+                        <p class="project-type">
+                            BUSINESS WEBSITE
+                        </p>
+
+                        <h3>
+                            Lavine's Apparel
+                        </h3>
+
+                        <p>
+                            A modern website for an apparel
+                            business selling footwear, handbags
+                            and travel bags.
+                        </p>
+
+                        <a
+                            href="https://ramnoah002.github.io/Lavines-appeal/"
+                            target="_blank"
+                            class="project-link"
+                        >
+                            View Live Website →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Project 2 -->
+
+                <article class="project-card">
+
+                    <div class="project-image">
+
+                        <img
+                            src="images/barber.jfif"
+                            alt="Barbershop website"
+                        >
+
+                    </div>
+
+                    <div class="project-info">
+
+                        <p class="project-type">
+                            BUSINESS WEBSITE
+                        </p>
+
+                        <h3>
+                            Elite Barbershop
+                        </h3>
+
+                        <p>
+                            A modern responsive website designed
+                            for a barbershop business.
+                        </p>
+
+                        <a
+                            href="#"
+                            class="project-link"
+                        >
+                            View Project →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Project 3 -->
+
+                <article class="project-card">
+
+                    <div class="project-image project-placeholder">
+
+                        <span>
+                            ShiftClock
+                        </span>
+
+                    </div>
+
+                    <div class="project-info">
+
+                        <p class="project-type">
+                            WEB APPLICATION
+                        </p>
+
+                        <h3>
+                            ShiftClock
+                        </h3>
+
+                        <p>
+                            An employee attendance system designed
+                            to help businesses manage employees,
+                            attendance and reports.
+                        </p>
+
+                        <a
+                            href="#"
+                            class="project-link"
+                        >
+                            Coming Soon →
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CONTACT ================= -->
+
+        <section class="contact" id="contact">
+
+            <div class="contact-content">
+
+                <p class="hero-small">
+                    HAVE A PROJECT?
+                </p>
+
+                <h2>
+                    Let's build something together.
+                </h2>
+
+                <p>
+                    If you need a modern website for your business
+                    or personal brand, let's talk.
+                </p>
+
+                <div class="contact-buttons">
+
+                    <a
+                        href="mailto:ramnoah002@gmail.com"
+                        class="btn"
+                    >
+                        Email Me
+                    </a>
+
+                    <a
+                        href="https://wa.me/254708401452"
+                        target="_blank"
+                        class="btn btn-outline"
+                    >
+                        WhatsApp Me
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
 
     <footer>
 
-        <p>
-            © 2026 Ram Noah | All Rights Reserved.
+        <div class="footer-content">
+
+            <div>
+
+                <a href="#home" class="logo">
+                    Noah<span>.</span>
+                </a>
+
+                <p>
+                    Frontend Web Developer building
+                    modern websites.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+
+            </div>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 Ram Noah. All Rights Reserved.
         </p>
 
     </footer>
