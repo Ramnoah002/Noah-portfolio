@@ -977,3 +977,43 @@ section.show {
     }
 
 }
+
+/* =====================================================
+   PROJECT TECHNOLOGY TAGS
+===================================================== */
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.tech-tags span {
+    padding: 5px 10px;
+
+    background: #181818;
+    border: 1px solid #333;
+    border-radius: 20px;
+
+    color: #aaa;
+    font-size: 11px;
+}
+
+.project-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.project-link {
+    display: inline-block;
+    color: #00e5ff;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.project-link:hover {
+    transform: translateX(4px);
+}
